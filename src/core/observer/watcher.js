@@ -179,7 +179,7 @@ export default class Watcher {
 	 */
 	update() {
 		if (this.lazy) {
-			// 这个lazy也对应了computedwatcher ，如果依赖更细，那么更新dirty为true，以触发computed的重新计算
+			// 这个lazy也对应了computedwatcher ，如果依赖更新，那么更新dirty为true，以触发computed的重新计算
 			this.dirty = true;
 		} else if (this.sync) {
 			this.run();
