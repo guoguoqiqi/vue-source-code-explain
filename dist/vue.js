@@ -1610,7 +1610,7 @@
 			}
 		}
 		function mergeField(key) {
-			console.log("strats---", strats);
+			// console.log("strats---", strats);
 			var strat = strats[key] || defaultStrat;
 			options[key] = strat(parent[key], child[key], vm, key);
 		}
@@ -3269,6 +3269,12 @@
 	var hooksToMerge = Object.keys(componentVNodeHooks);
 
 	function createComponent(Ctor, data, context, children, tag) {
+		// debugger
+		console.log("Ctor", Ctor);
+		console.log("data", data);
+		console.log("context", context);
+		console.log("children", children);
+		console.log("tag", tag);
 		if (isUndef(Ctor)) {
 			return;
 		}
@@ -4673,7 +4679,7 @@
 	 * Will be called when a dependency changes.
 	 */
 	Watcher.prototype.update = function update() {
-		debugger;
+		// debugger;
 		if (this.lazy) {
 			this.dirty = true;
 		} else if (this.sync) {
@@ -5124,7 +5130,7 @@
 			var vm = this;
 			// a uid
 			vm._uid = uid$3++;
-			console.log("vm._uid----", vm._uid);
+			// console.log("vm._uid----", vm._uid);
 
 			var startTag, endTag;
 			/* istanbul ignore if */
@@ -5149,7 +5155,7 @@
 					vm
 				);
 			}
-			console.log("vm.$options---", vm.$options);
+			// console.log("vm.$options---", vm.$options);
 			/* istanbul ignore else */
 			{
 				initProxy(vm);
@@ -5159,7 +5165,7 @@
 			initLifecycle(vm);
 			initEvents(vm);
 			initRender(vm);
-			console.log("vm----------", vm);
+			// console.log("vm----------", vm);
 			callHook(vm, "beforeCreate");
 			initInjections(vm); // resolve injections before data/props
 			initState(vm);
@@ -5619,7 +5625,7 @@
 		initExtend(Vue);
 		initAssetRegisters(Vue);
 
-		console.log("Vue----", new Vue());
+		// console.log("Vue----", new Vue());
 	}
 
 	initGlobalAPI(Vue);

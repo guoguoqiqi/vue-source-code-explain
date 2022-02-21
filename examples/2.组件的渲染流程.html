@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-16">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <child></child>
+  </div>
+</body>
+<script>
+  // Vue()
+  var child = Vue.extend({
+    template: '<h1>我是{{name}}---</h1>',
+    data: function() {
+      return {
+        name: '子组件'
+      }
+    }
+  })
+
+  debugger;
+  const vm = new Vue({
+    el: '#app',
+    components: {
+      child
+    },
+    render(h) {
+      return h('child')
+    }
+  })
+</script>
+
+</html>
